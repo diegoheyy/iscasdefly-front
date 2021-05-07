@@ -20,7 +20,7 @@ export default {
     }
   },
   asyncData ({ params }) {
-    return axios.get(`https://iscasdefly.000webhostapp.com/wp-json/wp/v2/posts/${params.id}`)
+    return axios.get(`http://localhost/wordpress/wp-json/wp/v2/posts/${params.id}`)
       .then(response => {
         return { post: response.data }
       })

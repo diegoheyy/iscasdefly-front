@@ -1,10 +1,36 @@
-<template>
+<template >
   <v-app>
-    <v-main>
-      <!-- <h1>Estou no default</h1> -->
+    <v-main color="red">
+      <v-app-bar
+        color="primary"
+        app
+        dark
+        inverted-scroll
+        transition="scroll-y-transition"
+      >
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+        <v-toolbar-title>Title</v-toolbar-title>
+
+        <v-spacer></v-spacer>
+
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+
+        <v-btn icon>
+          <v-icon>mdi-heart</v-icon>
+        </v-btn>
+
+        <v-btn icon>
+          <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn>
+      </v-app-bar>
       <v-container fluid>
         <nuxt />
       </v-container>
+     <div>Default</div>
+     
     </v-main>
   </v-app>
 
@@ -80,3 +106,5 @@ export default {
   },
 }
 </script>
+<style>
+</style>
