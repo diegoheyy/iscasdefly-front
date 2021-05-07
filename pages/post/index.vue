@@ -1,25 +1,15 @@
 <template>
   <vcontainer>
-    <v-btn color="primary" elevation="2" large>ALOW</v-btn>
-    <v-container class="pa-1">
-      <v-item-group>
-        <v-row>
-          <v-col v-for="(post, i) in posts" :key="i" cols="12" md="6">
-            <v-img :src="`${post.fimg_url}`"  height="150" ></v-img>
-            <v-item >
-                     {{post.title.rendered}}
-            </v-item>
-          </v-col>
-        </v-row>
-      </v-item-group>
-    </v-container>
+    <theListPost :posts="posts"></theListPost>
   </vcontainer>
 </template>
 <script>
 import axios from 'axios'
+import theListPost from '../../components/theListPost.vue'
 export default {
+  components: { theListPost },
   asyncData({ params }) {
-    return axios(`https://barradois.com/wp-json/wp/v2/posts`)
+    return axios(`https://iscasdefly.000webhostapp.com//wp-json/wp/v2/posts`)
       .then((response) => {
         return { posts: response.data }
       })
@@ -29,7 +19,7 @@ export default {
   },
   data() {
     return {
-      posts: {},
+      posts: [],
       error: [],
     }
   },
