@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div>
     <div class="container">
       <div>
@@ -42,29 +41,6 @@
             >
           </v-carousel> -->
         </container>
-=======
-  <div class="container">
-    <div>
-      <h1 class="text-h2 primary--text">
-        <span class="text-h4 d-none d-sm-inline">www.</span>Iscas de Fly<span
-          class="text-h4 d-none d-sm-inline">.com.br</span
-        >
-      </h1>
-      <div class="text-body-2 subtitle mt-5">
-        Em breve um Blog sobre o mundo do Fly Fishing e as maravilhas da pesca.
-      </div>
-      <div class="links">
-        <v-btn color="primary" outlined small nuxt href="/post"> Blog </v-btn>
-        <v-btn
-          color="primary"
-          outlined
-          small
-          target="_blank"
-          href="https://www.instagram.com/explore/tags/pescacommosca/"
-        >
-          Instagram <v-icon>mdi-instagram</v-icon>
-        </v-btn>
->>>>>>> 8f38ac0cee78953a955f2fd7c08ad78e9f6a5c28
       </div>
     </div>
   </div>
