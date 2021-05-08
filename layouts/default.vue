@@ -5,7 +5,6 @@
         color="primary"
         app
         dark
-        inverted-scroll
         transition="scroll-y-transition"
       >
         <v-app-bar-nav-icon></v-app-bar-nav-icon>

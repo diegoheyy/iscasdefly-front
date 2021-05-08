@@ -10,14 +10,15 @@
             solo-inverted
             hide-details
             prepend-inner-icon="mdi-magnify"
-            label="Search"
+            label="O que está procurando ?"
           ></v-text-field>
         </v-toolbar>
       </template>
-      <template v-slot:default="{ items }">
-        <v-row>
-          <v-col v-for="(post, i) in posts" :key="i" cols="12" md="6">
-            <v-card class="" max-width="600">
+      <template v-slot:default="props">
+        
+        <v-row justify="space-around mt-5">
+          <v-col v-for="(post) in props.items" :key="post" cols="12" md="6" lg="4">
+            <v-card class="">
               <v-img
                 :src="`${post.featured_image_url}`"
                 class="white--text align-end"
@@ -26,9 +27,11 @@
               >
                 <v-card-title v-text="post.title.rendered"></v-card-title>
               </v-img>
-              <v-card-subtitle
+              <v-card-text
+                class="overflow-hidden"
                 v-html="noReadMore(post.excerpt.rendered)"
-              ></v-card-subtitle>
+                
+              ></v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer
                 ><v-btn text color="primary" small>
@@ -85,3 +88,38 @@ export default {
   },
 }
 </script>
+<style>
+
+.truncate-overflow{
+  --max-lines: 3;
+  position: relative;
+  max-height: calc(var(--lh) * var(--max-lines));
+  overflow: hidden;
+  padding-right: 1rem; /* space for ellipsis */
+}
+.truncate-overflow::before {
+  position: absolute;
+  content: "...";
+  /* tempting... but shows when lines == content */
+  /* top: calc(var(--lh) * (var(--max-lines) - 1)); */
+  
+  /*
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  */
+  bottom: 0;
+  right: 0;
+}
+.truncate-overflow::after {
+  content: "";
+  position: absolute;
+  /*
+  inset-inline-end: 0;
+  */
+  right: 0;
+  /* missing bottom on purpose*/
+  width: 1rem;
+  height: 1rem;
+  background: white;
+}
+</style>
