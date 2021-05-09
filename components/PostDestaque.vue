@@ -1,23 +1,19 @@
 <template>
   <v-carousel
     cycle
-    :show-arrows-on-hover="false"
-    hide-delimiter-background
+    :show-arrows-on-hover="true"
+    :hide-delimiter-background="false"
     delimiter-icon="mdi-fish"
+    height="400"
   >
-    <v-carousel-item
-      v-for="post in postsDestaque"
-      :key="post.id"
-      :src="post.fimg_url"
-      width="800px"
-    >
-      <v-row style="height: 100%" no-gutters align="end">
-        <v-col align-self="start" md="8">
-          <div class="display-1 blue darken-1 pa-2 white--tex elevation-3">
-            {{ post.title.rendered }}
-          </div>
+    <v-carousel-item v-for="post in postsDestaque" :key="post.id">
+      <v-row>
+        <v-col md="9">
+      <v-img height="400" position="center" :src="post.featured_image_url"></v-img>
+
         </v-col>
-        <!-- <v-spacer></v-spacer> -->
+        <v-col md="3"></v-col>
+
       </v-row>
     </v-carousel-item>
   </v-carousel>
@@ -34,15 +30,6 @@ export default {
       required: false,
     },
   },
-  //   asyncData({ params }) {
-  //     return axios(`http://localhost/wordpress/wp-json/wp/v2/posts`)
-  //       .then((response) => {
-  //         return { posts: response.data }
-  //       })
-  //       .catch((error) => {
-  //         return { error: error }
-  //       })
-  //   },
   data() {
     return {}
   },

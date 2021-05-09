@@ -2,11 +2,12 @@
   <v-container class="pa-1">
     <v-data-iterator :items="posts" :search="search" hide-default-footer>
       <template v-slot:header>
-        <v-toolbar dark color="blue darken-3" class="mb-1">
+        <v-toolbar fixed  dark color="primary" class="mb-1">
           <v-text-field
             v-model="search"
             clearable
             flat
+            fluid
             solo-inverted
             hide-details
             prepend-inner-icon="mdi-magnify"
@@ -16,8 +17,8 @@
       </template>
       <template v-slot:default="props">
         
-        <v-row justify="space-around mt-5">
-          <v-col v-for="(post) in props.items" :key="post" cols="12" md="6" lg="4">
+        <v-row justify="space-around mt-4">
+          <v-col v-for="(post) in props.items" :key="post.title.rendered" cols="12" md="6" lg="4">
             <v-card class="">
               <v-img
                 :src="`${post.featured_image_url}`"
@@ -88,38 +89,3 @@ export default {
   },
 }
 </script>
-<style>
-
-.truncate-overflow{
-  --max-lines: 3;
-  position: relative;
-  max-height: calc(var(--lh) * var(--max-lines));
-  overflow: hidden;
-  padding-right: 1rem; /* space for ellipsis */
-}
-.truncate-overflow::before {
-  position: absolute;
-  content: "...";
-  /* tempting... but shows when lines == content */
-  /* top: calc(var(--lh) * (var(--max-lines) - 1)); */
-  
-  /*
-  inset-block-end: 0;
-  inset-inline-end: 0;
-  */
-  bottom: 0;
-  right: 0;
-}
-.truncate-overflow::after {
-  content: "";
-  position: absolute;
-  /*
-  inset-inline-end: 0;
-  */
-  right: 0;
-  /* missing bottom on purpose*/
-  width: 1rem;
-  height: 1rem;
-  background: white;
-}
-</style>

@@ -1,35 +1,24 @@
 <template >
-  <v-app>
+  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
     <v-main color="red">
-      <v-app-bar
-        color="primary"
-        app
-        dark
-        transition="scroll-y-transition"
-      >
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-        <v-toolbar-title>Title</v-toolbar-title>
-
+      <v-app-bar color="primary" app dark>
+        <v-app-bar-nav-icon>
+          <v-icon></v-icon>
+        </v-app-bar-nav-icon>
+        <v-toolbar-title>Iscas de Fly</v-toolbar-title>
         <v-spacer></v-spacer>
-
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-dots-vertical</v-icon>
+        <v-btn icon nuxt href="/post"> Blog </v-btn>
+        <v-btn
+          icon
+          target="_blank"
+          href="https://www.instagram.com/explore/tags/pescacommosca/"
+        >
+          <v-icon>mdi-instagram</v-icon>
         </v-btn>
       </v-app-bar>
       <v-container fluid>
         <nuxt />
       </v-container>
-     <div>Default</div>
-     
     </v-main>
   </v-app>
 
@@ -103,7 +92,13 @@ export default {
       title: 'Vuetify.js',
     }
   },
+  computed:{
+    theme(){
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+    }
+  }
 }
 </script>
 <style>
+
 </style>
