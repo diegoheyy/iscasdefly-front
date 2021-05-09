@@ -1,6 +1,6 @@
 <template >
   <v-app :style="{background: $vuetify.theme.themes[theme].background}">
-    <v-main color="red">
+    <v-main>
       <v-app-bar color="primary" app dark>
         <v-app-bar-nav-icon>
           <v-icon></v-icon>

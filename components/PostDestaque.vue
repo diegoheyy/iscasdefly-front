@@ -7,14 +7,24 @@
     height="400"
   >
     <v-carousel-item v-for="post in postsDestaque" :key="post.id">
-      <v-row>
-        <v-col md="9">
-      <v-img height="400" position="center" :src="post.featured_image_url"></v-img>
-
-        </v-col>
-        <v-col md="3"></v-col>
-
-      </v-row>
+      <template v-slot>
+        <v-row fluid>
+          <v-col md="9" class="px-0">
+            <v-img
+              height="400"
+              position="center"
+              :src="post.featured_image_url"
+            >
+            </v-img>
+          </v-col>
+          <v-col md="3" class="align-stretch white ">
+            
+              <v-card-title class="primary--text title" v-text="post.title.rendered"></v-card-title>
+              
+            
+          </v-col>
+        </v-row>
+      </template>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -32,6 +42,11 @@ export default {
   },
   data() {
     return {}
+  },
+  methods: {
+    noReadMore(text) {
+      return text.substr(0, text.indexOf('</p>') + 4)
+    },
   },
 }
 </script>
