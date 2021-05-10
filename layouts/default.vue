@@ -1,11 +1,14 @@
 <template >
-  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
+  <v-app :style="{ background: $vuetify.theme.themes[theme].background }">
     <v-main>
       <v-app-bar color="primary" app dark>
         <v-app-bar-nav-icon>
-          <v-icon></v-icon>
+           <v-btn icon nuxt href="/"><v-icon>mdi-home</v-icon></v-btn>
         </v-app-bar-nav-icon>
-        <v-toolbar-title>Iscas de Fly</v-toolbar-title>
+        <v-toolbar-title>
+         Iscas de Fly
+        </v-toolbar-title
+        >
         <v-spacer></v-spacer>
         <v-btn icon nuxt href="/post"> Blog </v-btn>
         <v-btn
@@ -92,13 +95,12 @@ export default {
       title: 'Vuetify.js',
     }
   },
-  computed:{
-    theme(){
-      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
-    }
-  }
+  computed: {
+    theme() {
+      return this.$vuetify.theme.dark ? 'dark' : 'light'
+    },
+  },
 }
 </script>
 <style>
-
 </style>

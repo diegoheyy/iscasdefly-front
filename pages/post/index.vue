@@ -5,9 +5,10 @@
 </template>
 <script>
 import axios from 'axios'
-
+import TheListPost from '@/components/TheListPost'
 export default {
-  components: { theListPost },
+  
+  components: { TheListPost },
   asyncData({ params } ) {
     console.log(process.env.BASE_API)
     return axios(

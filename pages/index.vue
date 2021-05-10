@@ -16,7 +16,7 @@
 
     <v-row justify="center" class="mt-5">
       <v-col lg="12" md="10">
-        <TheLastPosts :postsDestaque="postDestaque"></TheLastPosts>
+        <TheLastPost :postsDestaque="postDestaque"></TheLastPost>
       </v-col>
     </v-row>
     <v-row justify="center" class="mt-5">
@@ -29,7 +29,12 @@
 
 <script>
 import axios from 'axios'
+import TheListPost from '@/components/TheListPost'
+import TheLastPost from '@/components/TheLastPost'
+
 export default {
+  
+  components: { TheListPost,TheLastPost },
   asyncData({ params }) {
    
     return axios.all([
