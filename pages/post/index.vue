@@ -1,11 +1,11 @@
 <template>
   <vcontainer>
-    <theListPost :posts="posts"></theListPost>
+    <TheListPost :posts="posts"></TheListPost>
   </vcontainer>
 </template>
 <script>
 import axios from 'axios'
-import theListPost from '../../components/theListPost.vue'
+
 export default {
   components: { theListPost },
   asyncData({ params } ) {

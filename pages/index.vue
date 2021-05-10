@@ -16,12 +16,12 @@
 
     <v-row justify="center" class="mt-5">
       <v-col lg="12" md="10">
-        <PostDestaque :postsDestaque="postDestaque"></PostDestaque>
+        <TheLastPosts :postsDestaque="postDestaque"></TheLastPosts>
       </v-col>
     </v-row>
     <v-row justify="center" class="mt-5">
       <v-col lg="12" md="10">
-        <theListPost :posts="post"></theListPost>
+        <TheListPost :posts="post"></TheListPost>
       </v-col>
     </v-row>
   </v-container>
