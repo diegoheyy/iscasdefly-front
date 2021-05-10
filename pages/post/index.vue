@@ -8,8 +8,11 @@ import axios from 'axios'
 import theListPost from '../../components/theListPost.vue'
 export default {
   components: { theListPost },
-  asyncData({ params }) {
-    return axios(`https://iscasdefly.000webhostapp.com/wp-json/wp/v2/posts`)
+  asyncData({ params } ) {
+    console.log(process.env.BASE_API)
+    return axios(
+      `${process.env.BASE_API}/posts?per_page=99`
+    )
       .then((response) => {
         return { posts: response.data }
       })

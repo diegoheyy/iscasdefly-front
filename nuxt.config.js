@@ -2,6 +2,10 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  env: {
+    BASE_API: process.env.BASE_API || 'alow'
+  
+},
   head: {
     titleTemplate: '%s - iscasdefly',
     title: 'iscasdefly',
@@ -31,6 +35,8 @@ export default {
 
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+
+    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

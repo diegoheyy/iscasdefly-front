@@ -1,6 +1,6 @@
 <template>
   <v-container class="pa-1">
-    <v-data-iterator :items="posts" :search="search" hide-default-footer>
+    <v-data-iterator :items="posts" :search="search" hide-default-footer disable-pagination>
       <template v-slot:header>
         <v-toolbar fixed  dark color="primary" class="mb-1">
           <v-text-field
