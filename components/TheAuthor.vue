@@ -9,7 +9,7 @@
       <v-col md="8" class="text-center">{{ author.description }}</v-col>
     </v-row>
     <v-row justify="center">
-      <v-btn icon @click="author.url">
+      <v-btn text tile :href="author.url">
         <v-icon class="mr-2">mdi-instagram</v-icon>
         {{ author.name }}
       </v-btn>

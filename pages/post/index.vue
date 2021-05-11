@@ -5,7 +5,6 @@
 </template>
 <script>
 import axios from 'axios'
-import TheListPost from '@/components/TheListPost'
 export default {
   
   components: { TheListPost },

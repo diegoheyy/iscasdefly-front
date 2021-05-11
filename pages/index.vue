@@ -29,9 +29,6 @@
 
 <script>
 import axios from 'axios'
-import TheListPost from '@/components/TheListPost'
-import TheLastPost from '@/components/TheLastPost'
-
 export default {
   
   components: { TheListPost,TheLastPost },
