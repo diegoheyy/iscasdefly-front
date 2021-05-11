@@ -1,27 +1,39 @@
 <template>
   <v-container>
-    <v-card elevation="0">
-     <v-card outlined primary class="mt-n3">
-      <v-text class="display-4">
-        {{ post.title.rendered }}
-      </v-text>
-    </v-card>
-    </v-card>
-    
-    <v-img height="60vh" :src="post.featured_image_url"> </v-img>
-   
     <section>
       <v-card class="pa-5">
-        <PostConstent>
-          <div v-html="post.content.rendered"></div>
-        </PostConstent>
-      </v-card>
+        <v-row align="center" justify="center">
+          <v-col col="6" class="text-center display-3 titulo-post">
+            {{ post.title.rendered }}
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-divider></v-divider>
+        </v-row>
+        <v-row v-if="post.featured_image_url">
+          <v-img
+            height="60vh"
+            max-height="450px"
+            :src="post.featured_image_url"
+            alt=""
+          >
+          </v-img>
+        </v-row>
+        <v-row justify="center">
+          <v-col md="8">
+            <PostConstent>
+              <div class="contentPost" v-html="post.content.rendered"></div>
+            </PostConstent>
+          </v-col>
+        </v-row>
 
-      <div>
-        <h1 class="title">
-          {{ post.title.rendered }}
-        </h1>
-      </div>
+        <v-row class="mt-12">
+          <v-divider></v-divider>
+        </v-row>
+        <v-row>
+          <TheAuthor :author="post._embedded.author[0]"></TheAuthor>
+        </v-row>
+      </v-card>
     </section>
   </v-container>
 </template>
@@ -42,8 +54,7 @@ export default {
     }
   },
   asyncData({ params }) {
-    return axios
-      .get(`${process.env.BASE_API}/posts/${params.id}`)
+    return axios(`${process.env.BASE_API}/posts/${params.id}?_embed`)
       .then((response) => {
         return { post: response.data }
       })
@@ -51,6 +62,7 @@ export default {
         return { error: error }
       })
   },
+
   data() {
     return {
       post: {},
@@ -59,5 +71,24 @@ export default {
   },
 }
 </script>
-<style>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Quicksand&display=swap');
+.contentPost {
+  font-family: 'Quicksand', sans-serif;
+}
+.tituloPost {
+  font-family: 'Lato', sans-serif;
+}
+
+.contentPost >>> img {
+  max-width: 100%;
+  height: auto;
+  max-height: 1200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contentPost >>> p {
+  text-align: justify;
+}
 </style>
