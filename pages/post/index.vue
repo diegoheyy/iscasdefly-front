@@ -10,7 +10,6 @@ export default {
   
   components: { TheListPost },
   asyncData({ params } ) {
-    console.log(process.env.BASE_API)
     return axios(
       `${process.env.BASE_API}/posts?per_page=99`
     )

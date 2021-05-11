@@ -35,7 +35,7 @@
               ></v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer
-                ><v-btn text color="primary" small>
+                ><v-btn nuxt :href="`/post/${post.id}`" text color="primary" small>
                   Ler Mais
                   <v-icon right dark> mdi-arrow-right </v-icon>
                 </v-btn></v-card-actions
