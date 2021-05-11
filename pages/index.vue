@@ -31,7 +31,6 @@
 import axios from 'axios'
 export default {
   
-  components: { TheListPost,TheLastPost },
   asyncData({ params }) {
    
     return axios.all([

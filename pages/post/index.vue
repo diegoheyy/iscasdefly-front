@@ -7,7 +7,7 @@
 import axios from 'axios'
 export default {
   
-  components: { TheListPost },
+
   asyncData({ params } ) {
     return axios(
       `${process.env.BASE_API}/posts?per_page=99`
