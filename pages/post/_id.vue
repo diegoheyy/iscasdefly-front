@@ -7,9 +7,23 @@
             {{ post.title.rendered }}
           </v-col>
         </v-row>
-        <v-row>
+
+        <v-row class="mb-5">
+          
           <v-divider></v-divider>
         </v-row>
+          <v-row justify="center" class="mb-5">
+            <v-chip
+              class="mx-2"
+              color="info"
+              small
+              v-for="cat in post._embedded['wp:term'][0]"
+              :key="cat.id"
+            >
+              {{ cat.slug }}
+            </v-chip>
+          </v-row>
+
         <v-row v-if="post.featured_image_url">
           <v-img
             height="60vh"
@@ -19,6 +33,7 @@
           >
           </v-img>
         </v-row>
+
         <v-row justify="center">
           <v-col md="8">
             <PostConstent>

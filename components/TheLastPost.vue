@@ -17,11 +17,12 @@
             >
             </v-img>
           </v-col>
-          <v-col md="3" class="align-stretch white ">
-            
-              <v-card-title class="primary--text title" v-text="post.title.rendered"></v-card-title>
-              
-            
+          <!-- :visible="$vuetify.breakpoint.mobile" -->
+          <v-col  md="3" class="align-stretch white">
+            <v-card-title
+              class="primary--text title"
+              v-text="post.title.rendered"
+            ></v-card-title>
           </v-col>
         </v-row>
       </template>

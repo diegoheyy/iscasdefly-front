@@ -32,10 +32,10 @@ import axios from 'axios'
 export default {
   
   asyncData({ params }) {
-   
+   console.log(`${process.env.BASE_API}/posts?filter%5B?per_page=5&_embed`)
     return axios.all([
-      axios.get(`${process.env.BASE_API}/posts?per_page=5`),
-      axios.get(`${process.env.BASE_API}/posts?per_page=12`)])
+      axios.get(`${process.env.BASE_API}/posts?per_page=5&_embed`),
+      axios.get(`${process.env.BASE_API}/posts?per_page=12&_embed`)])
       .then(axios.spread((response, response1) => {
         return { 
           postDestaque: response.data,
