@@ -11,7 +11,7 @@
     <v-row justify="center">
       <v-btn text tile :href="author.url">
         <v-icon class="mr-2">mdi-instagram</v-icon>
-        {{ author.name }}
+        {{ author.slug }}
       </v-btn>
     </v-row>
   </v-container>
