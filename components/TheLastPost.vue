@@ -1,13 +1,40 @@
 <template>
   <v-carousel
     cycle
-    :show-arrows-on-hover="true"
+    :show-arrows-on-hover="!$vuetify.breakpoint.mobile"
     :hide-delimiter-background="false"
     delimiter-icon="mdi-fish"
     height="400"
   >
     <v-carousel-item v-for="post in postsDestaque" :key="post.id">
       <template v-slot>
+        <v-row
+          v-if="$vuetify.breakpoint.mobile"
+          justify="center"
+          class="align-center white"
+        >
+          <v-card-title
+            class="primary--text title"
+            v-text="post.title.rendered"
+          ></v-card-title>
+        </v-row>
+
+        <v-row
+          v-if="$vuetify.breakpoint.mobile"
+          justify="center"
+          class="align-center white mb-n6"
+        >
+          <v-chip
+            class="ma-2"
+            color="info"
+            small
+            outlined
+            v-for="cat in post._embedded['wp:term'][0]"
+            :key="cat.id"
+          >
+            {{ cat.slug }}
+          </v-chip>
+        </v-row>
         <v-row fluid>
           <v-col md="9" class="px-0">
             <v-img
@@ -18,7 +45,11 @@
             </v-img>
           </v-col>
           <!-- :visible="$vuetify.breakpoint.mobile" -->
-          <v-col  md="3" class="align-stretch white">
+          <v-col
+            v-if="!$vuetify.breakpoint.mobile"
+            md="3"
+            class="align-stretch white"
+          >
             <v-card-title
               class="primary--text title"
               v-text="post.title.rendered"
