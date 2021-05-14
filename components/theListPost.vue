@@ -1,8 +1,13 @@
 <template>
   <v-container class="pa-1">
-    <v-data-iterator :items="posts" :search="search" hide-default-footer disable-pagination>
+    <v-data-iterator
+      :items="posts"
+      :search="search"
+      hide-default-footer
+      disable-pagination
+    >
       <template v-slot:header>
-        <v-toolbar fixed  dark color="primary" class="mb-1">
+        <v-toolbar fixed dark color="primary" class="mb-1">
           <v-text-field
             v-model="search"
             clearable
@@ -16,10 +21,15 @@
         </v-toolbar>
       </template>
       <template v-slot:default="props">
-        
         <v-row justify="space-around mt-4">
-          <v-col v-for="(post) in props.items" :key="post.title.rendered" cols="12" md="6" lg="4">
-            <v-card class="">
+          <v-col
+            v-for="post in props.items"
+            :key="post.title.rendered"
+            cols="12"
+            md="6"
+            lg="4"
+          >
+            <v-card class="fill-height">
               <v-img
                 :src="`${post.featured_image_url}`"
                 class="white--text align-end"
@@ -29,13 +39,18 @@
                 <v-card-title v-text="post.title.rendered"></v-card-title>
               </v-img>
               <v-card-text
-                class="overflow-hidden"
+                class="overflow-hidden mt-5"
                 v-html="noReadMore(post.excerpt.rendered)"
-                
               ></v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer
-                ><v-btn nuxt :href="`/post/${post.id}`" text color="primary" small>
+                ><v-btn
+                  nuxt
+                  :href="`/post/${post.id}`"
+                  text
+                  color="primary"
+                  small
+                >
                   Ler Mais
                   <v-icon right dark> mdi-arrow-right </v-icon>
                 </v-btn></v-card-actions
@@ -70,7 +85,6 @@
   </v-container>
 </template>
 <script>
-
 import axios from 'axios'
 export default {
   name: 'TheListPost',
