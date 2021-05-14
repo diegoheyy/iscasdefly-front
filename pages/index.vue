@@ -2,9 +2,9 @@
   <v-container>
     <v-row justify="center">
       <h1 class="text-h2 primary--text">
-        <span class="text-h4 d-none d-sm-inline">www.</span>
+        <!-- <span class="text-h4 d-none d-sm-inline">www.</span> -->
         Iscas de Fly
-        <span class="text-h4 d-none d-sm-inline">.com.br</span>
+        <!-- <span class="text-h4 d-none d-sm-inline">.com.br</span> -->
       </h1>
     </v-row>
     <v-row justify="center">
