@@ -6,7 +6,7 @@
     delimiter-icon="mdi-fish"
     height="400"
   >
-    <v-carousel-item v-for="post in postsDestaque" :key="post.id">
+    <v-carousel-item v-for="post in postsDestaque" :key="post.id" nuxt :href="`/post/${post.id}`">
       <template v-slot>
         <v-row
           v-if="$vuetify.breakpoint.mobile"
