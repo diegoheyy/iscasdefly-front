@@ -1,7 +1,7 @@
 <template>
   <v-carousel
     cycle
-    :show-arrows-on-hover="!$vuetify.breakpoint.mobile"
+    :show-arrows-on-hover="!$vuetify.breakpoint.smAndDown"
     :hide-delimiter-background="false"
     delimiter-icon="mdi-fish"
     height="400"
@@ -9,7 +9,7 @@
     <v-carousel-item v-for="post in postsDestaque" :key="post.id">
       <template v-slot>
         <v-row
-          v-if="$vuetify.breakpoint.mobile"
+          v-if="$vuetify.breakpoint.smAndDown"
           justify="center"
           class="align-center white"
         >
@@ -20,7 +20,7 @@
         </v-row>
 
         <v-row
-          v-if="$vuetify.breakpoint.mobile"
+          v-if="$vuetify.breakpoint.smAndDown"
           justify="center"
           class="align-center white mb-n6"
         >
@@ -46,7 +46,7 @@
           </v-col>
           <!-- :visible="$vuetify.breakpoint.mobile" -->
           <v-col
-            v-if="!$vuetify.breakpoint.mobile"
+            v-if="!$vuetify.breakpoint.smAndDown"
             md="3"
             class="align-stretch white"
           >
