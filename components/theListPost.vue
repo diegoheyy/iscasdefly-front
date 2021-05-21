@@ -67,6 +67,7 @@ export default {
   name: 'TheListPost',
   props: {
     posts: Array,
+
   },
 
   data() {
