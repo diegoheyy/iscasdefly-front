@@ -6,12 +6,8 @@
 <script>
 import axios from 'axios'
 export default {
-  
-
-  asyncData({ params } ) {
-    return axios(
-      `${process.env.BASE_API}/posts?per_page=99`
-    )
+  asyncData({ params }) {
+    return axios(`${process.env.BASE_API}/posts?per_page=99`)
       .then((response) => {
         return { posts: response.data }
       })
