@@ -16,7 +16,7 @@
           outlined
           small
           target="_blank"
-          href="https://www.instagram.com/explore/tags/pescacommosca/"
+          href="https://www.instagram.com/iscas_de_fly/"
         >
           Instagram <v-icon>mdi-instagram</v-icon>
         </v-btn>
